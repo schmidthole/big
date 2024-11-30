@@ -314,6 +314,10 @@ func (d *Decimal) UnmarshalJSON(b []byte) error {
 	return d.fl.UnmarshalText(b)
 }
 
+func (d Decimal) MarshalYaML() (interface{}, error) {
+	return d.String(), nil
+}
+
 func isQuoted(b []byte) bool {
 	quoteByte := byte('"')
 	return len(b) > 0 && b[0] == quoteByte && b[len(b)-1] == quoteByte
