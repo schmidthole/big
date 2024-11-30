@@ -314,7 +314,7 @@ func (d *Decimal) UnmarshalJSON(b []byte) error {
 	return d.fl.UnmarshalText(b)
 }
 
-func (d Decimal) MarshalYaML() (interface{}, error) {
+func (d Decimal) MarshalYAML() (interface{}, error) {
 	return d.String(), nil
 }
 
